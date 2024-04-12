@@ -1,14 +1,14 @@
 package engine.dataloader;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.HashSet;
 
-import javax.xml.crypto.Data;
-
+import engine.items.Item;
 import engine.registries.WeaponRegistry;
+import engine.world.Room;
 
 public class Dataloader {
     
@@ -95,4 +95,43 @@ public class Dataloader {
 
 
     }
+
+    public static HashMap<String, Room> readRoomRegistry(){
+
+        HashMap<String, Room> rooms;
+
+        try {
+            FileReader f = new FileReader(ROOMS_FILE_NAME);
+            BufferedReader br = new BufferedReader(f);
+            String line = br.readLine();
+            String[] array;
+            String[] itemArray;
+
+            while(line != null){
+    
+                array = line.split(",");
+                itemArray = array[3].split(";");
+
+                //Find a way to get Items from csv file and add all room items to a hash set 
+                //then make this hash set the items attribute for the room
+
+
+            }
+
+
+
+
+
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
+
+
+
+
+
+    }
+
+
 }

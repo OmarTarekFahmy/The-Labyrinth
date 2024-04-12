@@ -1,5 +1,5 @@
 package engine.text;
-import java.time.*;
+
 public class TextWriter {
     
     private long waitMillis;
