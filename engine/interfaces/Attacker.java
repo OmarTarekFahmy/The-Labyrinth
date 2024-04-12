@@ -1,8 +1,10 @@
 package engine.interfaces;
 
+import engine.exceptions.OutOfAmmoException;
+
 public interface Attacker {
 
     public int getDamage();
-    public void attack(int damage);
+    public void attack(Attackee target) throws OutOfAmmoException;
     
 } 

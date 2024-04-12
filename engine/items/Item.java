@@ -2,6 +2,7 @@ package engine.items;
 
 abstract public class Item {
     
+    
     private String name;
     private int resourceValue;
 

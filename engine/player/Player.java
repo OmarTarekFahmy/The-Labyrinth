@@ -1,7 +1,5 @@
 package engine.player;
 
-import java.util.ArrayList;
-
 public class Player {
 
 

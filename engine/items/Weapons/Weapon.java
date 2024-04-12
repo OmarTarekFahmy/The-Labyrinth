@@ -1,6 +1,10 @@
-package engine.items;
+package engine.items.Weapons;
 
-public class Weapon extends Item{
+import engine.interfaces.Attacker;
+import engine.items.Item;
+
+abstract public class Weapon extends Item implements Attacker{
+
 
     private int damage;
 
