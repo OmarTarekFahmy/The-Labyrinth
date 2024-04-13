@@ -9,7 +9,7 @@ public class Player {
 
 
     public Player(){
-        
+        inventory = new Inventory(0);
     }
 
     public int getHealth() {

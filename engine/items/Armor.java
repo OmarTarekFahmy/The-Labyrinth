@@ -12,8 +12,8 @@ public class Armor extends Item{
         this.strength = strength;
     }
 
-    public Armor(String name, int resourceValue, int strength) {
-        super(name, resourceValue);
+    public Armor(String code, String name, int strength) {
+        super(code, name);
         this.strength = strength;
     }
     

@@ -1,0 +1,4 @@
+For the actions, make a hash set of all synonyms to the actions
+and map it to a value where the value is the fundamental actions
+
+e.g kill,shoot,hit are all in a set and the entire set is mapped to the action attack

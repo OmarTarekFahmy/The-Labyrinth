@@ -3,12 +3,18 @@ Item Codes:
 Start with 0 - Melee Weapon
 Start with 1 - Ranged Weapon
 Start with 2 - Armor
-Start with 3 - 
+Start with 3,4 - General Item
 
 
 
 weapons.csv
 Code,Name,Damage
+
+settings.csv
+
+0 = initalHealth
+1 = initialCurrency
+2 = inventorySize
 
 
 

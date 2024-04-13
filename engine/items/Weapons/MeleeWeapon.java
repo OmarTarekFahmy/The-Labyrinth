@@ -4,8 +4,8 @@ import engine.interfaces.Attackee;
 
 public class MeleeWeapon extends Weapon{
     
-    public MeleeWeapon(String name, int resourceValue, int damage) {
-        super(name, resourceValue, damage);
+    public MeleeWeapon(String code, String name, int damage) {
+        super(code, name, damage);
     }
 
     @Override

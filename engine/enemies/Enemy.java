@@ -5,10 +5,17 @@ import engine.interfaces.Attacker;
 
 public class Enemy implements Attacker, Attackee{
     
+    private String code;
     private String name;
     private int health;
     private int damage;
-    
+
+    public String getCode() {
+        return code;
+    }
+    public void setCode(String code) {
+        this.code = code;
+    }
 
     public int getHealth() {
         return health;
@@ -29,7 +36,8 @@ public class Enemy implements Attacker, Attackee{
         this.name = name;
     }
 
-    public Enemy(String name, int health, int damage){
+    public Enemy(String code, String name, int health, int damage){
+        this.code = code;
         this.name = name;
         this.health = health;
         this.damage = damage;

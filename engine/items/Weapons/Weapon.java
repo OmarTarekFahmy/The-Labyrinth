@@ -16,8 +16,8 @@ abstract public class Weapon extends Item implements Attacker{
         this.damage = damage;
     }
 
-    public Weapon(String name, int resourceValue, int damage){
-        super(name, resourceValue);
+    public Weapon(String code, String name, int damage){
+        super(code, name);
         this.damage = damage;
     }    
     

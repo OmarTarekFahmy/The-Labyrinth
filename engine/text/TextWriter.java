@@ -16,6 +16,12 @@ public class TextWriter {
 
 
         for(int i = 0; i < text.length(); i++){
+            
+        
+            if(text.charAt(i) == '@'){
+                System.out.println();
+                continue;
+            }    
             System.out.print(text.charAt(i));
             try{
             Thread.sleep(waitMillis);

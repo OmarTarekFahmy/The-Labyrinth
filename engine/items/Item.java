@@ -1,10 +1,23 @@
 package engine.items;
 
-abstract public class Item {
+
+import engine.interfaces.PRSIndirect;
+import engine.interfaces.PRSObject;
+import engine.parser.PRSAction;
+
+public class Item implements PRSObject, PRSIndirect{
     
     
     private String name;
-    private int resourceValue;
+    private String code;
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 
     public String getName() {
         return name;
@@ -14,17 +27,22 @@ abstract public class Item {
         this.name = name;
     }
 
-    public int getResourceValue() {
-        return resourceValue;
-    }
 
-    public void setResourceValue(int resourceValue) {
-        this.resourceValue = resourceValue;
-    }
 
-    public Item(String name, int resourceValue){
+    public Item(String code, String name){
+        this.code = code;
         this.name = name;
-        this.resourceValue = resourceValue;
+
+    }
+
+   
+    public void doAction(PRSAction a) {
+       
+    }
+
+   
+    public void doAction(PRSAction a, PRSIndirect i) {
+       
     }
 
     

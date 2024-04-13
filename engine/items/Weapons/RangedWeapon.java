@@ -9,8 +9,8 @@ public class RangedWeapon extends Weapon{
 
 
 
-    public RangedWeapon(String name, int resourceValue, int damage) {
-        super(name, resourceValue, damage);
+    public RangedWeapon(String code, String name, int damage) {
+        super(code, name, damage);
         
     }
 
