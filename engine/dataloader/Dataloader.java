@@ -19,7 +19,8 @@ public class Dataloader {
     private static final String ROOMS_FILE_NAME = "rooms.csv";
     private static final String ITEMS_FILE_NAME = "items.csv";
     private static final String SETTINGS_FILE_NAME = "settings.csv";
-    private static final String ACTION_ITEM_MAP_FILE_NAME = "action_item_mao.csv";
+    private static final String ACTION_ITEM_MAP_FILE_NAME = "action_item_map.csv";
+    private static final String ACTIONS_SYNONYM_FILE_NAME = "actionSynonym.csv";
 
     
     public static HashMap<String, WeaponRegistry> readWeaponRegistry(){
@@ -224,5 +225,45 @@ public class Dataloader {
             System.out.println("Cannot Read Weapons File");
         }   
         return actionItemMap;
+    }
+
+    public static HashMap<PRSAction, HashSet<String>> readActionSynonymMap(){
+
+
+            HashMap<PRSAction, HashSet<String>> synonymsMap = new HashMap<>();
+        
+    
+            try {   
+                FileReader f = new FileReader(ACTIONS_SYNONYM_FILE_NAME);
+                BufferedReader br = new BufferedReader(f);       
+                String line = br.readLine();
+                String[] array;
+                PRSAction action;
+                String[] synonyms;
+    
+                while(line != null){
+    
+                    array = line.split(",");
+                    action = new PRSAction(array[0]);
+                    synonyms = array[1].split(";");
+                    HashSet<String> synonymSet = new HashSet<>();
+                    for(String s : synonyms){
+                        synonymSet.add(s);
+                    }
+                   
+                    synonymsMap.put(action, synonymSet);
+                    line = br.readLine();
+                 }
+                 br.close();
+                
+                
+            } catch (IOException e) {
+                System.out.println("Cannot Read Synonyms File");
+            }   
+            return synonymsMap;
+
+
+
+
     }
 }

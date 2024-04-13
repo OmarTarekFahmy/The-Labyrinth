@@ -4,7 +4,6 @@ public enum Action {
     PICKUP,
     THROW,
     EAT,
-    DRINK,
     KILL,
     ATTACK,
     JUMP,

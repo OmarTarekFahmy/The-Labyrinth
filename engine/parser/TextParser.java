@@ -1,5 +1,9 @@
 package engine.parser;
 
+import java.util.HashMap;
+import java.util.HashSet;
+
+import engine.dataloader.Dataloader;
 import engine.interfaces.PRSIndirect;
 import engine.interfaces.PRSObject;
 
@@ -28,7 +32,64 @@ public class TextParser {
     private PRSAction action;
     private PRSObject object;
     private PRSIndirect indirectObject;
+    private HashMap<PRSAction, HashSet<String>> synonymsMap;
 
+    public HashMap<PRSAction, HashSet<String>> getSynonymsMap() {
+        return synonymsMap;
+    }
+
+    public void setSynonymsMap(HashMap<PRSAction, HashSet<String>> synonymsMap) {
+        this.synonymsMap = synonymsMap;
+    }
+
+    public PRSAction getAction() {
+        return action;
+    }
+
+    public void setAction(PRSAction action) {
+        this.action = action;
+    }
+
+    public PRSObject getObject() {
+        return object;
+    }
+
+    public void setObject(PRSObject object) {
+        this.object = object;
+    }
+
+    public PRSIndirect getIndirectObject() {
+        return indirectObject;
+    }
+
+    public void setIndirectObject(PRSIndirect indirectObject) {
+        this.indirectObject = indirectObject;
+    }
+
+    
+
+    public TextParser(){
+
+        synonymsMap = Dataloader.readActionSynonymMap();
+
+    }
+
+    public void parseText(String textToParse){
+
+        for (PRSAction action : synonymsMap.keySet()) {
+
+            for (String synonym : synonymsMap.get(action)) {
+
+                if(textToParse.toLowerCase().contains(synonym)){
+                    this.action = action;
+                    return;
+                }
+                
+            }
+            
+        }
+
+    }
 
 
 

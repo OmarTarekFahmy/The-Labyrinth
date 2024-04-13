@@ -13,6 +13,7 @@ import engine.world.Room;
 import engine.dataloader.*;
 import engine.enemies.EnemyRegistry;
 import engine.parser.PRSAction;
+import engine.parser.TextParser;
 
 public class Game {
 
@@ -81,7 +82,7 @@ public class Game {
     }
     public static void main(String[] args) {
         
-        new Game();
         
+      
     }
 }

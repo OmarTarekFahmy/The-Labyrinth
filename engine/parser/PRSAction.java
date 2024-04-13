@@ -16,15 +16,15 @@ public class PRSAction {
 
     public PRSAction(String action){
 
-        switch (action) {
+        switch (action.toUpperCase()) {
             case "PICKUP":
                 this.action = Action.PICKUP;
                 break;
             case "ATTACK":
-                this.action = Action.PICKUP;
+                this.action = Action.ATTACK;
                 break;
             case "EAT":
-                this.action = Action.PICKUP;
+                this.action = Action.EAT;
                 break;
         
             default:
